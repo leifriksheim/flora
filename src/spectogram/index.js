@@ -6,7 +6,7 @@ export default class Spectrogram {
   audioEl = null;
   source = null;
   firstClick = false;
-  frequencySamples = 512;
+  frequencySamples = 256;
   timeSamples = 400;
   nVertices = (this.frequencySamples + 1) * (this.timeSamples + 1);
   scene = null;
