@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: black;
+      }
+      .start-button {
+        border: 0;
+        cursor: pointer;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background: none;
+        font-size: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        transform: translateX(-50%) translateY(-50%);
+      }
+      .start-button:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <audio
+        v-show="false"
+        crossorigin="anonymous"
+        controls=""
+        autoplay=""
+        name="media"
+      >
+        <source
+          crossOrigin="anonymous"
+          src="http://locus.creacast.com:9001/jasper_ridge_birdcast.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+      <button class="start-button" v-if="!isInit" @click="initSpectoGram">
+        Start Listening
+      </button>
+      <div id="Spectrogram"></div>
+    </div>
+    <script type="x-shader/x-vertex" id="vertexshader">
+      attribute float displacement;
+      uniform vec3 vLut[256];
+      varying vec3 vColor;
+
+      void main()
+      {
+
+      	int index = int(displacement);
+      	vColor = vLut[index];
+      	vec3 newPosition = position + normal*displacement/25.5;
+      	gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition,1.0);
+      }
+    </script>
+
+    <script type="x-shader/x-fragment" id="fragmentshader">
+      varying vec3 vColor;
+
+      		void main()
+      		{
+      			gl_FragColor 	= vec4(vColor,1.0);
+      		}
+    </script>
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
