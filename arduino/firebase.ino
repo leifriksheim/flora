@@ -1,105 +1,90 @@
-#include <Arduino.h>
-#if defined(ESP32)
-#include <WiFi.h>
-#elif defined(ESP8266)
-#include <ESP8266WiFi.h>
-#endif
-#include <Firebase_ESP_Client.h>
+#include "ESP8266WiFi.h"
+#include "ESP8266HTTPClient.h"
+#include "DHT.h"
+#include "ArduinoJson.h"
+#include <arduino_secrets.h>
 
-// Provide the token generation process info.
-#include "addons/TokenHelper.h"
-// Provide the RTDB payload printing info and other helper functions.
-#include "addons/RTDBHelper.h"
+#define DHTPIN 4
+#define DHTTYPE DHT11
 
-// Insert your network credentials
-#define WIFI_SSID "valldaura-labs"
-#define WIFI_PASSWORD "valldaura"
+DHT dht(DHTPIN, DHTTYPE);
 
-// Insert Firebase project API Key
-#define API_KEY "AIzaSyDY-acv5Cu8dls1EsFZvbJ17-CjEROND3s"
-
-// Insert RTDB URLefine the RTDB URL */
-#define DATABASE_URL "https://flora-valldaura-default-rtdb.europe-west1.firebasedatabase.app"
-
-// Define Firebase Data object
-FirebaseData fbdo;
-
-FirebaseAuth auth;
-FirebaseConfig config;
-
-unsigned long sendDataPrevMillis = 0;
-int count = 0;
-bool signupOK = false;
+char ssid[] = SECRET_SSID;
+char pass[] = SECRET_PASS;
 
 void setup()
 {
+
   Serial.begin(115200);
-  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-  Serial.print("Connecting to Wi-Fi");
+
+  dht.begin();
+
+  WiFi.begin(ssid, pass);
+
   while (WiFi.status() != WL_CONNECTED)
   {
-    Serial.print(".");
-    delay(300);
-  }
-  Serial.println();
-  Serial.print("Connected with IP: ");
-  Serial.println(WiFi.localIP());
-  Serial.println();
-
-  /* Assign the api key (required) */
-  config.api_key = API_KEY;
-
-  /* Assign the RTDB URL (required) */
-  config.database_url = DATABASE_URL;
-
-  /* Sign up */
-  if (Firebase.signUp(&config, &auth, "", ""))
-  {
-    Serial.println("ok");
-    signupOK = true;
-  }
-  else
-  {
-    Serial.printf("%s\n", config.signer.signupError.message.c_str());
+    delay(1000);
+    Serial.println("Connecting to WiFi..");
   }
 
-  /* Assign the callback function for the long running token generation task */
-  config.token_status_callback = tokenStatusCallback; // see addons/TokenHelper.h
-
-  Firebase.begin(&config, &auth);
-  Firebase.reconnectWiFi(true);
+  Serial.println("Connected to the WiFi network");
+  delay(1000);
 }
 
 void loop()
 {
-  if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > 15000 || sendDataPrevMillis == 0))
-  {
-    sendDataPrevMillis = millis();
-    // Write an Int number on the database path test/int
-    if (Firebase.RTDB.setInt(&fbdo, "test/int", count))
-    {
-      Serial.println("PASSED");
-      Serial.println("PATH: " + fbdo.dataPath());
-      Serial.println("TYPE: " + fbdo.dataType());
-    }
-    else
-    {
-      Serial.println("FAILED");
-      Serial.println("REASON: " + fbdo.errorReason());
-    }
-    count++;
 
-    // Write an Float number on the database path test/float
-    if (Firebase.RTDB.setFloat(&fbdo, "test/float", 0.01 + random(0, 100)))
+  /*
+    float h = dht.readHumidity();
+    // Read temperature as Celsius (the default)
+    float t = dht.readTemperature();
+    // Read temperature as Fahrenheit (isFahrenheit = true)
+    float f = dht.readTemperature(true);
+    */
+
+  if ((WiFi.status() == WL_CONNECTED))
+  {
+
+    WiFiClient client;
+    HTTPClient http;
+
+    float h = 1;
+    float t = 2;
+    float f = 3;
+
+    DynamicJsonDocument doc(1024);
+
+    JsonObject fields = doc.createNestedObject("fields");
+    fields["Name"] = "Mushroom Box 1";
+    fields["Temperature"] = t;
+    fields["Humidity"] = h;
+
+    String data;
+    serializeJson(doc, data);
+
+    Serial.println(data);
+
+    http.begin(client, "https://flora-valldaura.firebaseio.com/readings.json");
+    http.addHeader("Content-Type", "application/json");
+    http.addHeader("Authorization", "Bearer keyYTxVp7R6EePIrw");
+    Serial.println("Sending HTTP Request");
+    int httpResponseCode = http.POST(data);
+    Serial.println("HTTP Request sent");
+    if (httpResponseCode > 0)
     {
-      Serial.println("PASSED");
-      Serial.println("PATH: " + fbdo.dataPath());
-      Serial.println("TYPE: " + fbdo.dataType());
+      String response = http.getString();
+
+      Serial.println(httpResponseCode);
+      Serial.println(response);
     }
     else
     {
-      Serial.println("FAILED");
-      Serial.println("REASON: " + fbdo.errorReason());
+      Serial.print("Error on sending POST Request: ");
+      Serial.println(httpResponseCode);
     }
-  }
+
+    http.end();
+
+    delay(10000);
+  };
 }
