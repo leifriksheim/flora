@@ -26,10 +26,22 @@
       .start-button:hover {
         text-decoration: underline;
       }
+      .weather {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        position: absolute;
+        left: 30px;
+        top: 30px;
+        font-size: 50px;
+      }
     </style>
   </head>
   <body>
     <div id="app">
+      <div class="weather">
+        <p>Temperature: {{temperature}} °C</p>
+        <p>Humidity: {{humidity}}%</p>
+      </div>
       <audio
         style="display: none"
         crossorigin="anonymous"
