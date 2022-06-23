@@ -18,6 +18,7 @@ export default class Spectrogram {
   analyserData = null;
   mesh = null;
   heights = null;
+  stream = null;
   animate = this.animate.bind(this);
   initAudioContext = this.initAudioContext.bind(this);
   initThree = this.initThree.bind(this);
@@ -27,39 +28,38 @@ export default class Spectrogram {
 
   constructor(props) {
     this.el = document.querySelector(props.el);
+    this.initThree();
+  }
 
-    window.addEventListener(
-      "click",
-      () => {
-        this.initAudioContext();
-        this.initThree();
-      },
-      { once: true }
-    );
+  start() {
+    if (!this.audioContext) {
+      this.initAudioContext();
+    }
   }
 
   initAudioContext() {
-    /*
-    this.audioEl = document.querySelector("audio");
-    this.audioEl.crossOrigin = "anonymous";
-    this.audioEl.play();
-    */
     this.audioContext = new AudioContext();
     this.analyser = this.audioContext.createAnalyser();
     this.analyser.fftSize = 4 * this.frequencySamples;
     this.analyser.smoothingTimeConstant = 0.5;
     this.analyserData = new Uint8Array(this.analyser.frequencyBinCount);
 
-    //this.source = this.audioContext.createMediaElementSource(this.audioEl);
-    //this.source.connect(this.analyser);
-    //this.source.connect(this.audioContext.destination);
-
     navigator.mediaDevices
       .getUserMedia({ audio: { echoCancellation: false }, video: false })
       .then((stream) => {
+        this.stream = stream;
         this.source = this.audioContext.createMediaStreamSource(stream);
         this.source.connect(this.analyser);
       });
+
+    /*
+    this.audioEl = document.querySelector("audio");
+    this.audioEl.crossOrigin = "anonymous";
+    this.audioEl.play();
+    this.source = this.audioContext.createMediaElementSource(this.audioEl);
+    this.source.connect(this.analyser);
+    this.source.connect(this.audioContext.destination);
+    */
   }
 
   animate() {
@@ -73,16 +73,18 @@ export default class Spectrogram {
   }
 
   updateGeometry() {
-    this.analyser.getByteFrequencyData(this.analyserData);
-    let start_val = this.frequencySamples + 1;
-    let end_val = this.nVertices - start_val;
-    this.heights.copyWithin(0, start_val, this.nVertices + 1);
+    if (this.audioContext) {
+      this.analyser.getByteFrequencyData(this.analyserData);
+      let start_val = this.frequencySamples + 1;
+      let end_val = this.nVertices - start_val;
+      this.heights.copyWithin(0, start_val, this.nVertices + 1);
 
-    this.heights.set(this.analyserData, end_val - start_val);
-    this.mesh.geometry.setAttribute(
-      "displacement",
-      new THREE.Uint8BufferAttribute(this.heights, 1)
-    );
+      this.heights.set(this.analyserData, end_val - start_val);
+      this.mesh.geometry.setAttribute(
+        "displacement",
+        new THREE.Uint8BufferAttribute(this.heights, 1)
+      );
+    }
   }
 
   initThree() {

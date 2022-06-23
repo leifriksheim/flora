@@ -1,4 +1,4 @@
-import Spectrogram from "./src/spectogram/index.js";
+import Spectrogram from "./src/spectrogram/index.js";
 import { getObservations } from "./src/inaturalist/index.js";
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
@@ -29,10 +29,11 @@ createApp({
     return {
       temperature: 0,
       humidity: 0,
+      spectroGram: null,
     };
   },
   async mounted() {
-    this.initSpectoGram();
+    this.initSpectroGram();
     const res = await getObservations();
     const readingsRef = ref(database, "latest");
     onValue(readingsRef, (snapshot) => {
@@ -42,8 +43,11 @@ createApp({
     });
   },
   methods: {
-    initSpectoGram() {
-      new Spectrogram({ el: "#Spectogram" });
+    startMic() {
+      this.spectroGram.start();
+    },
+    initSpectroGram() {
+      this.spectroGram = new Spectrogram({ el: "#Spectrogram" });
     },
   },
 }).mount("#app");
