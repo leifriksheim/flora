@@ -7,7 +7,9 @@
     <title>Document</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300;600;700&display=swap");
-
+      [v-cloak] {
+        display: none;
+      }
       body {
         padding: 0;
         margin: 0;
@@ -45,7 +47,7 @@
     </style>
   </head>
   <body>
-    <div id="app">
+    <div id="app" v-cloak>
       <div class="weather">
         <p>Temperature: {{temperature}} °C</p>
         <p>Humidity: {{humidity}}%</p>
