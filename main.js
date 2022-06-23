@@ -27,15 +27,13 @@ import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 createApp({
   data() {
     return {
-      isInit: false,
       temperature: 0,
       humidity: 0,
     };
   },
-  async created() {
+  async mounted() {
+    this.initSpectoGram();
     const res = await getObservations();
-    console.log(res);
-
     const readingsRef = ref(database, "latest");
     onValue(readingsRef, (snapshot) => {
       const data = snapshot.val();
@@ -45,8 +43,7 @@ createApp({
   },
   methods: {
     initSpectoGram() {
-      new Spectrogram({ el: "#Spectrogram" });
-      this.isInit = true;
+      new Spectrogram({ el: "#Spectogram" });
     },
   },
 }).mount("#app");

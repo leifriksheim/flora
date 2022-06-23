@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300;600;700&display=swap");
+
       body {
         padding: 0;
         margin: 0;
-        background-color: black;
+        font-family: "IBM Plex Mono", monospace;
       }
       .start-button {
         border: 0;
@@ -19,20 +21,19 @@
         top: 50%;
         background: none;
         font-size: 40px;
-        font-family: Arial, Helvetica, sans-serif;
-        color: white;
+        font-family: "IBM Plex Mono", monospace;
+        color: black;
         transform: translateX(-50%) translateY(-50%);
       }
       .start-button:hover {
         text-decoration: underline;
       }
       .weather {
-        font-family: Arial, Helvetica, sans-serif;
-        color: white;
+        color: black;
         position: absolute;
         left: 30px;
         top: 30px;
-        font-size: 50px;
+        font-size: 25px;
       }
     </style>
   </head>
@@ -42,6 +43,7 @@
         <p>Temperature: {{temperature}} °C</p>
         <p>Humidity: {{humidity}}%</p>
       </div>
+      <!--
       <audio
         style="display: none"
         crossorigin="anonymous"
@@ -55,10 +57,8 @@
           type="audio/mpeg"
         />
       </audio>
-      <button class="start-button" v-if="!isInit" @click="initSpectoGram">
-        Start Listening
-      </button>
-      <div id="Spectrogram"></div>
+      -->
+      <div id="Spectogram"></div>
     </div>
     <script type="x-shader/x-vertex" id="vertexshader">
       attribute float displacement;
