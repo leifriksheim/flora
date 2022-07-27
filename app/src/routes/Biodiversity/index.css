@@ -1,0 +1,19 @@
+.cameras video {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+}
+
+.camera-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.spectogram {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
