@@ -14,7 +14,6 @@ export default function Biodiversity() {
   return (
     <main>
       <div className="container">
-        <p>Biodiversity</p>
         <ul className="page-menu">
           <li>
             <Link to="/cameras">Live Cameras</Link>
@@ -22,7 +21,9 @@ export default function Biodiversity() {
           <li>
             <Link to="/radio">Bird Radio</Link>
           </li>
-          <li>Observations</li>
+          <li>
+            <Link to="/observations">Observations</Link>
+          </li>
         </ul>
       </div>
     </main>

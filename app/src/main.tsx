@@ -12,6 +12,7 @@ import Project from "./routes/Project";
 import Biodiversity from "./routes/Biodiversity";
 import Cameras from "./routes/Biodiversity/Cameras";
 import Radio from "./routes/Biodiversity/Radio";
+import Observations from "./routes/Biodiversity/Observations";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 
@@ -26,6 +27,7 @@ root.render(
           <Route path="/project" element={<Project />} />
           <Route path="/cameras" element={<Cameras />} />
           <Route path="/radio" element={<Radio />} />
+          <Route path="/observations" element={<Observations />} />
         </Route>
       </Routes>
     </BrowserRouter>
