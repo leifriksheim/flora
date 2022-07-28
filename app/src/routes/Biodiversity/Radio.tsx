@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import Hls from "hls.js";
 import "./index.css";
 import { useLayoutEffect, useEffect, useRef } from "react";
+// @ts-ignore
 import Spectogram from "../../utils/spectogram.js";
 
 export default function Cameras() {
-  const audioRef = useRef<HTMLDivElement>();
-  const spectogram = useRef();
+  const audioRef = useRef<HTMLDivElement>(null);
+  const spectogram = useRef<any>();
   const isInit = useRef(false);
 
   const audioSrc =
