@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./index.css";
-import imgSrc from '../../assets/img/collserola.jpg';
+import imgSrc from "../../assets/img/collserola.jpg"
 
 export default function Park() {
   return (

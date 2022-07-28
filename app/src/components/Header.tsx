@@ -1,6 +1,6 @@
 import "./Header.css";
 import { useEffect, useRef } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import { useState } from "react";
 
 export default function Header() {
@@ -24,15 +24,19 @@ export default function Header() {
     timer.current = setTimeout(startInteractionTimer, 2000);
   }
 
+  function activeClassName({isActive}:  {isActive: boolean}) {
+    return  isActive ? 'active' : undefined
+  }
+
   return (
     <header className={showHeader ? `header show` : `header`}>
       <div className="header__logo">
-        <Link to="/">F.L.O.R.A</Link>
+        <NavLink to="/" >F.L.O.R.A</NavLink>
       </div>
       <div className="header__menu">
-        <Link to="/project">Project</Link>
-        <Link to="/biodiversity">Biodiversity</Link>
-        <Link to="/park">Park</Link>
+        <NavLink className={activeClassName} to="/project">Project</NavLink>
+        <NavLink className={activeClassName} to="/biodiversity">Biodiversity</NavLink>
+        <NavLink className={activeClassName}s to="/park">Park</NavLink>
       </div>
     </header>
   );

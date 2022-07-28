@@ -7,6 +7,7 @@
   position: relative;
   z-index: 999;
   opacity: 0;
+  font-size: var(--font-size-md);
   transform: translateY(-10px);
   transition: 0.5s ease all;
   text-transform: uppercase;
@@ -36,11 +37,13 @@
 
 .header__logo {
   font-weight: 500;
-  font-size: var(--font-size-lg);
 }
 
 .header__menu {
   display: flex;
-  font-size: var(--font-size-lg);
   gap: 24px;
+}
+
+.header__menu .active {
+  text-decoration: underline;
 }

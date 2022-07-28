@@ -39,7 +39,7 @@ export default function Observations() {
                     className="observation__photo"
                     src={observation.photos[0].url.replace(
                       "square",
-                      "original"
+                      "large"
                     )}
                   ></img>
 
