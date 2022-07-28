@@ -36,7 +36,7 @@ export default function Header() {
       <div className="header__menu">
         <NavLink className={activeClassName} to="/project">Project</NavLink>
         <NavLink className={activeClassName} to="/biodiversity">Biodiversity</NavLink>
-        <NavLink className={activeClassName}s to="/park">Park</NavLink>
+        <NavLink className={activeClassName} to="/park">Park</NavLink>
       </div>
     </header>
   );
