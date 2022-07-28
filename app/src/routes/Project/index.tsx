@@ -6,7 +6,7 @@ export default function Project() {
   return (
     <main className="project">
       <div className="container">
-        <div className="project-container">
+        <div className="article">
           <img className="main-image" src={projectImg}></img>
           <h1 className="main-heading">Project</h1>
           <p className="subtitle">
