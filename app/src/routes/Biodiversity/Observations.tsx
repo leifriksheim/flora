@@ -32,7 +32,7 @@ export default function Observations() {
         <div className="grid">
           {res.map((observation: any) => {
             return (
-              <a href={observation.taxon?.wikipedia_url} target="_blank">
+              <a key={observation.id} href={observation.taxon?.wikipedia_url} target="_blank">
                 <article className="observation">
                   <img
                     loading="lazy"
