@@ -13,6 +13,7 @@ import Biodiversity from "./routes/Biodiversity";
 import Cameras from "./routes/Biodiversity/Cameras";
 import Radio from "./routes/Biodiversity/Radio";
 import Observations from "./routes/Biodiversity/Observations";
+import Tracibility from "./routes/Biodiversity/Tracibility";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 
@@ -28,6 +29,7 @@ root.render(
           <Route path="/cameras" element={<Cameras />} />
           <Route path="/radio" element={<Radio />} />
           <Route path="/observations" element={<Observations />} />
+          <Route path="/tracibility" element={<Tracibility />} />
         </Route>
       </Routes>
     </BrowserRouter>

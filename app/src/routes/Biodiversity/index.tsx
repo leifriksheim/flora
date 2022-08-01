@@ -24,6 +24,9 @@ export default function Biodiversity() {
           <li>
             <Link to="/observations">Observations</Link>
           </li>
+          <li>
+            <Link to="/tracibility">Tracibility</Link>
+          </li>
         </ul>
       </div>
     </main>
