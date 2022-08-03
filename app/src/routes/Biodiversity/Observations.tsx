@@ -69,6 +69,7 @@ export default function Observations() {
       page,
       taxa,
     });
+    console.log("fetching", species);
     setSpecies(species);
     setSpeciesCount(speciesCount);
   }
@@ -82,6 +83,8 @@ export default function Observations() {
   }
 
   useEffect(() => {
+    console.log("fetching");
+    setPage(1);
     fetchData();
   }, [taxa]);
 
@@ -107,12 +110,18 @@ export default function Observations() {
           </div>
         </div>
 
-        <select className="select" onChange={(e) => setTaxa(e.target.value)}>
-          <option disabled selected>
+        <select
+          defaultValue="select"
+          className="select"
+          onChange={(e) => setTaxa(e.target.value)}
+        >
+          <option disabled value="select">
             Select category
           </option>
           {taxaOptions.map((option) => (
-            <option value={option.value}>{option.label}</option>
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
           ))}
         </select>
 
