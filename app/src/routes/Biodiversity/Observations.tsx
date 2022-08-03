@@ -26,21 +26,22 @@ async function getSpecies({ page = 1, taxa = "" }) {
   return res.json();
 }
 
+const taxaOptions = [
+  { value: "", label: "All" },
+  { value: "Fungi", label: "Fungi" },
+  { value: "Aves", label: "Birds" },
+  { value: "Amphibia", label: "Amphibia" },
+  { value: "Reptilia", label: "Reptilia" },
+  { value: "Mammalia", label: "Mammalia" },
+  { value: "Mollusca", label: "Mollusca" },
+  { value: "Arachnida", label: "Arachnida" },
+  { value: "Insecta", label: "Insecta" },
+  { value: "Plantae", label: "Plantae" },
+  { value: "Protozoa", label: "Protozoa" },
+  { value: "unknown", label: "Unknown" },
+];
+
 export default function Observations() {
-  const [taxaOptions, setTaxaOptions] = useState([
-    { value: "", label: "All" },
-    { value: "Fungi", label: "Fungi" },
-    { value: "Aves", label: "Birds" },
-    { value: "Amphibia", label: "Amphibia" },
-    { value: "Reptilia", label: "Reptilia" },
-    { value: "Mammalia", label: "Mammalia" },
-    { value: "Mollusca", label: "Mollusca" },
-    { value: "Arachnida", label: "Arachnida" },
-    { value: "Insecta", label: "Insecta" },
-    { value: "Plantae", label: "Plantae" },
-    { value: "Protozoa", label: "Protozoa" },
-    { value: "unknown", label: "Unknown" },
-  ]);
   const [taxa, setTaxa] = useState("");
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
@@ -74,7 +75,7 @@ export default function Observations() {
 
   async function loadMore() {
     setLoading(true);
-    const { results } = await getSpecies({ page: page + 1 });
+    const { results } = await getSpecies({ page: page + 1, taxa });
     setSpecies([...species, ...results]);
     setPage(page + 1);
     setLoading(false);
@@ -108,7 +109,7 @@ export default function Observations() {
 
         <select className="select" onChange={(e) => setTaxa(e.target.value)}>
           <option disabled selected>
-            Select species type
+            Select category
           </option>
           {taxaOptions.map((option) => (
             <option value={option.value}>{option.label}</option>

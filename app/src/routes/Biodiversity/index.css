@@ -21,7 +21,13 @@
 .observations .grid {
   display: grid;
   gap: 42px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 4fr));
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (min-width: 800px) {
+  .observations .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .observations .observation__photo {
