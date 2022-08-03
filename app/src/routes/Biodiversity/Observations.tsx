@@ -1,10 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import "./index.css";
 
-type Observation = {
-  name: String;
-};
-
 async function getIdentifiers() {
   const res = await fetch(
     `https://api.inaturalist.org/v1/observations/identifiers?verifiable=true&spam=false&nelat=41.451898597071555&nelng=2.1406042373937506&swlat=41.4474756825558&swlng=2.1290278232854742&locale=nb`
@@ -21,9 +17,9 @@ async function getObservations({ page = 1 }) {
   return res.json();
 }
 
-async function getSpecies() {
+async function getSpecies({ page = 1 }) {
   const res = await fetch(
-    "https://api.inaturalist.org/v1/observations/species_counts?verifiable=true&spam=false&nelat=41.451890555682404&nelng=2.1406096018117804&swlat=41.44746764061841&swlng=2.1290224588674445&locale=nb&per_page=50"
+    `https://api.inaturalist.org/v1/observations/species_counts?verifiable=true&page=${page}&spam=false&&nelat=41.451890555682404&nelng=2.1406096018117804&swlat=41.44746764061841&swlng=2.1290224588674445&locale=nb&per_page=50`
   );
   return res.json();
 }
@@ -31,11 +27,13 @@ async function getSpecies() {
 export default function Observations() {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
+
   const [observationCount, setObservationCount] = useState(0);
   const [identifierCount, setIdentifierCount] = useState(0);
-  const [observations, setObservations] = useState<Observation[]>([]);
-  const [speciesCount, setSpeciesCount] = useState<number[]>([]);
-  const [species, setSpecies] = useState([]);
+  const [speciesCount, setSpeciesCount] = useState<number>(0);
+
+  const [observations, setObservations] = useState<any[]>([]);
+  const [species, setSpecies] = useState<any>([]);
 
   async function fetchData() {
     const { results: observations, total_results: observationCount } =
@@ -48,16 +46,17 @@ export default function Observations() {
     const { total_results: identifierCount } = await getIdentifiers();
     setIdentifierCount(identifierCount);
 
-    const { results: species, total_results: speciesCount } =
-      await getSpecies();
+    const { results: species, total_results: speciesCount } = await getSpecies({
+      page,
+    });
     setSpecies(species);
     setSpeciesCount(speciesCount);
   }
 
   async function loadMore() {
     setLoading(true);
-    const { results } = await getObservations({ page: page + 1 });
-    setObservations([...observations, ...results]);
+    const { results } = await getSpecies({ page: page + 1 });
+    setSpecies([...species, ...results]);
     setPage(page + 1);
     setLoading(false);
   }
