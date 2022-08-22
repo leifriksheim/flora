@@ -15,15 +15,17 @@ import Radio from "./routes/Biodiversity/Radio";
 import Observations from "./routes/Biodiversity/Observations";
 import Tracibility from "./routes/Biodiversity/Tracibility";
 
-
 declare global {
-    namespace JSX {
-        interface IntrinsicElements {
-            'a-scene': any;
-            'a-camera': any;
-            'a-box': any;
-        }
+  namespace JSX {
+    interface IntrinsicElements {
+      "a-scene": any;
+      "a-camera": any;
+      "a-box": any;
+      "a-nft": any;
+      "a-text": any;
+      "a-entity": any;
     }
+  }
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
