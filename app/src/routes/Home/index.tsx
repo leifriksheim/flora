@@ -2,13 +2,23 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import "./index.css";
 import imgUrl from "../../assets/img/flora-line.png";
 import svg from "../../assets/img/massing-clean.svg?raw";
+import Vivus from "vivus";
 /* ts-ignore */
 
 export default function Home() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const svgRef = use;
+  const svgContainer = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {}, []);
+  useLayoutEffect(() => {
+    const svg = svgContainer.current?.firstChild;
+
+    const myVivus = new Vivus(
+      svg,
+      { start: "autostart", type: "oneByOne" },
+      (obj: any) => {
+        obj.el.classList.add("finished");
+      }
+    );
+  }, []);
 
   return (
     <main>
@@ -19,6 +29,7 @@ export default function Home() {
         </div>
         <div
           className="illustration"
+          ref={svgContainer}
           dangerouslySetInnerHTML={{ __html: svg }}
         ></div>
       </div>

@@ -19,22 +19,21 @@
   text-transform: uppercase;
 }
 
-.home-content .illustration {
+.home-content .illustration svg {
   position: fixed;
   color: var(--green);
-  right: -100px;
-  top: 100px;
-  transform: scaleX(1);
-  width: 150vw;
+  right: -400px;
+  bottom: -200px;
   z-index: -1;
-  mix-blend-mode: multiply;
+  width: 900px;
+  height: 700px;
 }
 
 @media (min-width: 800px) {
-  .home-content .illustration {
+  .home-content .illustration svg {
     right: -200px;
     bottom: -200px;
-    transform: scaleX(1);
-    width: 80vw;
+    width: 1066px;
+    height: 870px;
   }
 }
