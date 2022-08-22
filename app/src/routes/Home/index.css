@@ -19,11 +19,22 @@
   text-transform: uppercase;
 }
 
-.home-content img {
+.home-content .illustration {
   position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 60vw;
+  color: var(--green);
+  right: -100px;
+  top: 100px;
+  transform: scaleX(1);
+  width: 150vw;
   z-index: -1;
   mix-blend-mode: multiply;
+}
+
+@media (min-width: 800px) {
+  .home-content .illustration {
+    right: -200px;
+    bottom: -200px;
+    transform: scaleX(1);
+    width: 80vw;
+  }
 }

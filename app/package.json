@@ -12,7 +12,8 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
-    "three": "^0.142.0"
+    "three": "^0.142.0",
+    "vivus": "^0.4.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
