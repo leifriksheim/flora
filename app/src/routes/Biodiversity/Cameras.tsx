@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Hls from "hls.js";
 import "./index.css";
+import bird from "../../assets/movies/bird.mp4";
 import { useLayoutEffect, useEffect, useRef } from "react";
 
 export default function Cameras() {
@@ -25,6 +26,10 @@ export default function Cameras() {
           <video ref={loadVideo} src={videoSrc} />
           <video ref={loadVideo} src={videoSrc} />
         </div>
+        <h2>Latest videos</h2>
+        <video autoPlay width="100%" controls>
+          <source src={bird} type="video/mp4" />
+        </video>
       </div>
     </main>
   );

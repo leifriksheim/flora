@@ -1,8 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./index.css";
+import cn from "classnames";
 import projectImg from "../../assets/img/project-top.png";
+import massingSteps from "../../assets/img/massing-steps.svg?raw";
 
 export default function Project() {
+  const [step, setStep] = useState(1);
+
   return (
     <main className="project">
       <div className="container">
@@ -33,6 +37,25 @@ export default function Project() {
             and bird watching spaces, the project seeks to be immersed within
             nature and to create an ecological interactive prototype.
           </p>
+
+          <div
+            className={cn({
+              step1: step >= 1,
+              step2: step >= 2,
+              step3: step >= 3,
+              step4: step >= 4,
+              step5: step >= 5,
+              step6: step >= 6,
+              step7: step >= 7,
+            })}
+            dangerouslySetInnerHTML={{ __html: massingSteps }}
+          ></div>
+          <button onClick={() => setStep(step - 1)} className="button">
+            Prev
+          </button>
+          <button onClick={() => setStep(step + 1)} className="button">
+            Next
+          </button>
         </div>
       </div>
     </main>

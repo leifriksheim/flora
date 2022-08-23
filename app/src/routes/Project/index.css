@@ -1,0 +1,167 @@
+svg * {
+  transition: all 1s ease;
+}
+
+#Land {
+  opacity: 1;
+}
+
+#Text {
+  opacity: 1;
+}
+
+#PlatformOne,
+#PlatformTwo,
+#PlatformThree {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.step1 #Platform1,
+.step1 #Platform2,
+.step1 #Platform3,
+.step1 #PlatformOne,
+.step1 #PlatformTwo,
+.step1 #PlatformThree,
+.step1 #Human {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.step2 #Circulation {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.step3 #Core,
+.step3 #Human_Above_Core {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.step3 #Circulation,
+.step3 #Text {
+  opacity: 0 !important;
+}
+
+.step4 #Core_boundary {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.step5 #Frame {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.step5 #Core_boundary {
+  opacity: 0;
+}
+
+.step6 #Mesh,
+.step6 #Toprail,
+.step6 #Mesh_boundary,
+.step6 #Human_Above_Mesh {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+#Circulation {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Platform3 {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Platform2 {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Platform1 {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Core {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Human {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Core_boundary {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Human_Above_Core {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Human_Belowmesh {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Human_Above_Mesh {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Toprail {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Mesh_boundary {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Mesh {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Trunk {
+  opacity: 1;
+}
+
+#Quercus_llex {
+  opacity: 0.3;
+}
+
+#Genus_Ulmus {
+  opacity: 0.3;
+}
+
+#Quercus_Pubescens {
+  opacity: 0.3;
+}
+
+#Quercus_Pubescens {
+  opacity: 0.3;
+}
+
+#Vines {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Frame {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#Mesh {
+  opacity: 0;
+  transform: translateY(-10px);
+}
