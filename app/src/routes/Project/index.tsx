@@ -50,10 +50,16 @@ export default function Project() {
             })}
             dangerouslySetInnerHTML={{ __html: massingSteps }}
           ></div>
-          <button onClick={() => setStep(step - 1)} className="button">
+          <button
+            onClick={() => step >= 1 && setStep(step - 1)}
+            className="button"
+          >
             Prev
           </button>
-          <button onClick={() => setStep(step + 1)} className="button">
+          <button
+            onClick={() => step < 7 && setStep(step + 1)}
+            className="button"
+          >
             Next
           </button>
         </div>

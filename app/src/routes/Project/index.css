@@ -66,6 +66,16 @@ svg * {
   transform: translateY(0px);
 }
 
+.step6 #Frame,
+.step6 #Mesh_boundary {
+  stroke-width: 0.5;
+}
+
+.step7 #Vines {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
 #Circulation {
   opacity: 0;
   transform: translateY(-10px);
