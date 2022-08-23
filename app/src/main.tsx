@@ -13,6 +13,7 @@ import Biodiversity from "./routes/Biodiversity";
 import Cameras from "./routes/Biodiversity/Cameras";
 import Radio from "./routes/Biodiversity/Radio";
 import Observations from "./routes/Biodiversity/Observations";
+import Observation from "./routes/Biodiversity/Observation";
 import Tracibility from "./routes/Biodiversity/Tracibility";
 
 declare global {
@@ -42,6 +43,7 @@ root.render(
           <Route path="/cameras" element={<Cameras />} />
           <Route path="/radio" element={<Radio />} />
           <Route path="/observations" element={<Observations />} />
+          <Route path="/observations/:id" element={<Observation />} />
           <Route path="/tracibility" element={<Tracibility />} />
         </Route>
       </Routes>
