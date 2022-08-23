@@ -1,9 +1,6 @@
 .home-content {
-  position: absolute;
   padding: var(--gutter);
-  top: 0;
-  left: 0;
-  height: 100vh;
+  height: calc(100vh - 100px);
   max-width: 850px;
   display: grid;
   place-content: end;
@@ -36,4 +33,36 @@
     width: 1200px;
     height: 1000px;
   }
+}
+
+.flower1 {
+  position: fixed;
+  bottom: -20%;
+  left: -10%;
+  width: 600px;
+  opacity: 0.1;
+}
+
+.flower2 {
+  position: fixed;
+  bottom: -10%;
+  left: 30%;
+  width: 300px;
+  opacity: 0.1;
+}
+
+.flower6 {
+  position: fixed;
+  bottom: -10%;
+  right: 10%;
+  width: 400px;
+  opacity: 0.1;
+}
+
+.flower7 {
+  position: fixed;
+  bottom: -10%;
+  right: -10%;
+  width: 400px;
+  opacity: 0.1;
 }
