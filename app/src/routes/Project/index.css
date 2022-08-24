@@ -14,7 +14,7 @@ svg * {
 #PlatformTwo,
 #PlatformThree {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 .step1 #Platform1,
@@ -78,67 +78,67 @@ svg * {
 
 #Circulation {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Platform3 {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Platform2 {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Platform1 {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Core {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Human {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Core_boundary {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Human_Above_Core {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Human_Belowmesh {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Human_Above_Mesh {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Toprail {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Mesh_boundary {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Mesh {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Trunk {
@@ -163,15 +163,15 @@ svg * {
 
 #Vines {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Frame {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }
 
 #Mesh {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100px);
 }

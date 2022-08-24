@@ -23,7 +23,7 @@ export default function Menu() {
       </li>
       <li>
         <div className="page-menu-item">
-          <Link to="/tracibility">Tracibility</Link>
+          <Link to="/traceability">Traceability</Link>
           <p>See where we cut the trees</p>
         </div>
       </li>

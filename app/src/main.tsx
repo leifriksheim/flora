@@ -14,7 +14,7 @@ import Cameras from "./routes/Biodiversity/Cameras";
 import Radio from "./routes/Biodiversity/Radio";
 import Observations from "./routes/Biodiversity/Observations";
 import Observation from "./routes/Biodiversity/Observation";
-import Tracibility from "./routes/Biodiversity/Tracibility";
+import Traceability from "./routes/Biodiversity/Traceability";
 
 declare global {
   namespace JSX {
@@ -44,7 +44,7 @@ root.render(
           <Route path="/radio" element={<Radio />} />
           <Route path="/observations" element={<Observations />} />
           <Route path="/observations/:id" element={<Observation />} />
-          <Route path="/tracibility" element={<Tracibility />} />
+          <Route path="/traceability" element={<Traceability />} />
         </Route>
       </Routes>
     </BrowserRouter>

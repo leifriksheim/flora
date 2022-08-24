@@ -37,32 +37,121 @@
 
 .flower1 {
   position: fixed;
-  bottom: -20%;
-  left: -10%;
-  width: 600px;
-  opacity: 0.1;
+  bottom: 2%;
+  left: -8%;
+  width: 450px;
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+.finished .flower1 {
+  animation: flower1 0.9s ease 0s forwards;
+}
+
+@keyframes flower1 {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(100px) translateX(-100px) rotate(38deg);
+  }
+  to {
+    opacity: 0.2;
+    transform: scale(1) translateY(0px) translateX(0px) rotate(38deg);
+  }
 }
 
 .flower2 {
   position: fixed;
-  bottom: -10%;
-  left: 30%;
-  width: 300px;
-  opacity: 0.1;
+  bottom: -15%;
+  left: 4%;
+  width: 350px;
+  opacity: 0.2;
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+.finished .flower2 {
+  animation: flower2 0.9s ease 0.4s forwards;
+}
+
+@keyframes flower2 {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(100px) translateX(-100px) rotate(22deg);
+  }
+  to {
+    opacity: 0.2;
+    transform: scale(1) translateY(0px) translateX(0px) rotate(22deg);
+  }
 }
 
 .flower6 {
   position: fixed;
-  bottom: -10%;
-  right: 10%;
-  width: 400px;
-  opacity: 0.1;
+  bottom: -9%;
+  right: 11%;
+  width: 247px;
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+.finished .flower6 {
+  animation: flower6 0.9s ease 0.8s forwards;
+}
+
+@keyframes flower6 {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(100px) translateX(100px) rotate(351deg);
+  }
+  to {
+    opacity: 0.25;
+    transform: scale(1) translateY(0px) translateX(0px) rotate(351deg);
+  }
 }
 
 .flower7 {
   position: fixed;
-  bottom: -10%;
-  right: -10%;
-  width: 400px;
-  opacity: 0.1;
+  bottom: -4%;
+  right: -3%;
+  width: 274px;
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+.finished .flower7 {
+  animation: flower7 0.9s ease 0.3s forwards;
+}
+
+@keyframes flower7 {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(100px) translateX(100px) rotate(0deg);
+  }
+  to {
+    opacity: 0.25;
+    transform: scale(1) translateY(0px) translateX(0px) rotate(0deg);
+  }
+}
+
+.butterfly {
+  position: fixed;
+  bottom: 10%;
+  left: 26%;
+  width: 274px;
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+.finished .butterfly {
+  animation: butterfly 0.9s ease 0.8s forwards;
+}
+
+@keyframes butterfly {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(100px) translateX(-100px) rotate(0deg);
+  }
+  to {
+    opacity: 0.2;
+    transform: scale(1) translateY(0px) translateX(0px) rotate(0deg);
+  }
 }
