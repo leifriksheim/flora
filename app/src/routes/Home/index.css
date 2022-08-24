@@ -35,6 +35,12 @@
   }
 }
 
+@media (max-width: 1300px) {
+  .illustrations {
+    display: none;
+  }
+}
+
 .flower1 {
   position: fixed;
   bottom: 2%;
