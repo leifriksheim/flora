@@ -5,7 +5,7 @@ import projectImg from "../../assets/img/project-top.png";
 import massingSteps from "../../assets/img/massing-steps.svg?raw";
 
 export default function Project() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
 
   return (
     <main className="project">
