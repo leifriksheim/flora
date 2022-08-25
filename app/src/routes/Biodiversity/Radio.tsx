@@ -11,9 +11,6 @@ export default function Cameras() {
   const isInit = useRef(false);
   const [hasClicked, setClicked] = useState(false);
 
-  const audioSrc =
-    "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8";
-
   useEffect(() => {
     if (audioRef.current && !isInit.current) {
       console.log("run");
@@ -35,13 +32,18 @@ export default function Cameras() {
 
   function onClick() {
     // @ts-ignore
-    spectogram.current.start();
     setClicked(true);
+    setTimeout(() => {
+      spectogram.current.start();
+    }, 100);
   }
 
   return (
     <main onClick={onClick} className="cameras">
-      {!hasClicked && <div className="click-to-start">Click to start</div>}
+      <div style={{ opacity: hasClicked ? 0 : 1 }} className="click-to-start">
+        Click to start
+      </div>
+
       <div className="container">
         <div className="spectogram" ref={audioRef}></div>
       </div>
