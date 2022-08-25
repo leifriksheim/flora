@@ -2,6 +2,17 @@ svg * {
   transition: all 1s ease;
 }
 
+.step-container {
+  text-align: center;
+}
+
+.step-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 #Land {
   opacity: 1;
 }

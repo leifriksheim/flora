@@ -148,3 +148,10 @@
 .observations .select:focus {
   outline: 1px solid var(--green);
 }
+
+.click-to-start {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}

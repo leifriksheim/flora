@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Hls from "hls.js";
 import "./index.css";
-import { useLayoutEffect, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 // @ts-ignore
 import Spectogram from "../../utils/spectogram.js";
 
@@ -9,6 +9,7 @@ export default function Cameras() {
   const audioRef = useRef<HTMLDivElement>(null);
   const spectogram = useRef<any>();
   const isInit = useRef(false);
+  const [hasClicked, setClicked] = useState(false);
 
   const audioSrc =
     "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8";
@@ -35,10 +36,12 @@ export default function Cameras() {
   function onClick() {
     // @ts-ignore
     spectogram.current.start();
+    setClicked(true);
   }
 
   return (
     <main onClick={onClick} className="cameras">
+      {!hasClicked && <div className="click-to-start">Click to start</div>}
       <div className="container">
         <div className="spectogram" ref={audioRef}></div>
       </div>

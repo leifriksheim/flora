@@ -61,11 +61,15 @@ a:hover {
   font-size: inherit;
   font-family: inherit;
   font-weight: 600;
-  margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 50px;
   cursor: pointer;
   display: inline-block;
   text-align: center;
+}
+
+.button[disabled] {
+  opacity: 0.5;
+  cursor: default;
 }
 
 .container {
