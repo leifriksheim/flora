@@ -1,11 +1,14 @@
 .cameras video {
   aspect-ratio: 4 / 3;
-  width: 100%;
+  height: 80vh;
+  margin: 0 auto;
+  border-radius: 50px;
+  box-shadow: inset 0px 0px 0px 10px var(--green);
 }
 
 .camera-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 12px;
 }
 
