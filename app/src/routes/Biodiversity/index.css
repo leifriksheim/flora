@@ -1,15 +1,37 @@
-.cameras video {
+.camera-container {
   aspect-ratio: 4 / 3;
-  height: 80vh;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   border-radius: 50px;
+  padding: 5px;
+  position: relative;
   box-shadow: inset 0px 0px 0px 10px var(--green);
 }
 
-.camera-grid {
+.camera-container video {
+  width: 100%;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.camera-container button {
+  position: absolute;
+  font-size: var(--font-size-xl);
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  background: var(--green);
+  border: 0;
+  outline: 0;
+  width: 150px;
+  height: 150px;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
+  place-items: center;
+
+  border-radius: 50%;
+  color: white;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .spectogram {
