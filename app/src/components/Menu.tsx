@@ -5,6 +5,12 @@ export default function Menu() {
     <ul className="page-menu">
       <li>
         <div className="page-menu-item">
+          <Link to="/cameras">About</Link>
+          <p>Read more about the project</p>
+        </div>
+      </li>
+      <li>
+        <div className="page-menu-item">
           <Link to="/cameras">Live Camera</Link>
           <p>Watch our live video feed</p>
         </div>

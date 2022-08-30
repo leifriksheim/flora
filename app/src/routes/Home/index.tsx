@@ -65,7 +65,16 @@ export default function Home() {
       </div>
       <div className="home-content">
         <div>
-          <h1>A forest lab for observational research and analysis</h1>
+          <h1>
+            <span>A </span>
+            <span>forest </span>
+            <span>lab </span>
+            <span>for </span>
+            <span>observational </span>
+            <span>research </span>
+            <span>and </span>
+            <span>analysis</span>
+          </h1>
           <h2>26 C° / 101325 Pa / 60φ</h2>
         </div>
         <div

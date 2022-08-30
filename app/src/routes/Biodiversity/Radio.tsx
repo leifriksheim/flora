@@ -40,8 +40,14 @@ export default function Cameras() {
 
   return (
     <main onClick={onClick} className="cameras">
-      <div style={{ opacity: hasClicked ? 0 : 1 }} className="click-to-start">
-        Click to start
+      <div
+        style={{
+          opacity: hasClicked ? 0 : 1,
+          cursor: hasClicked ? "defalut" : "pointer",
+        }}
+        className="click-to-start"
+      >
+        Click to start radio
       </div>
 
       <div className="container">

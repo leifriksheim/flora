@@ -29,15 +29,6 @@ export default function Project() {
             cut and the wood is then processed by the master students to create
             CLT panels.
           </p>
-          <p>
-            F.L.O.R.A will be used to house a researcher for a short period of
-            time that will be studying the biodiversity of the park, furthermore
-            will be using the new weather station introduced by F.L.O.R.A.
-            Housing a bird simulator, bird houses, working and projection space,
-            and bird watching spaces, the project seeks to be immersed within
-            nature and to create an ecological interactive prototype.
-          </p>
-
           <div className="step-container">
             <div
               className={cn({
@@ -69,6 +60,14 @@ export default function Project() {
               </button>
             </div>
           </div>
+          <p>
+            F.L.O.R.A will be used to house a researcher for a short period of
+            time that will be studying the biodiversity of the park, furthermore
+            will be using the new weather station introduced by F.L.O.R.A.
+            Housing a bird simulator, bird houses, working and projection space,
+            and bird watching spaces, the project seeks to be immersed within
+            nature and to create an ecological interactive prototype.
+          </p>
         </div>
       </div>
     </main>

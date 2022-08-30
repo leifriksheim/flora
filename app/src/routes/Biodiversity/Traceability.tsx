@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const trees = [
   { id: "A-1", lat: 41.4505, long: 2.1333 },
   { id: "A-2", lat: 41.45, long: 2.1333 },
@@ -33,9 +35,31 @@ const trees = [
 ];
 
 export default function Tracibility() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      // true for mobile device
+      setIsMobile(true);
+    }
+  }, []);
+
+  if (!isMobile) {
+    return (
+      <div className="container">
+        <h1 style={{ textAlign: "center" }}>
+          You need a mobile device to test this
+        </h1>
+      </div>
+    );
+  }
+
   return (
     <div>
-      test
       <a-scene
         vr-mode-ui="enabled: false"
         arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
