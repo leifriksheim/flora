@@ -5,7 +5,7 @@ import bird from "../../assets/movies/bird.mp4";
 import { useLayoutEffect, useEffect, useRef } from "react";
 
 export default function Cameras() {
-  const videoSrc = "http://10.44.2.150:443/hls/live.m3u8";
+  const videoSrc = "http://10.44.2.150:8080/hls/live.m3u8";
 
   function loadVideo(el: any) {
     if (el) {
