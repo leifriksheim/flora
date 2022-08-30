@@ -17,7 +17,7 @@ export default function Cameras() {
       // @ts-ignore
       spectogram.current = new Spectogram({
         el: audioRef.current,
-        audioSrc: "http://edge-audio-03-gos2.sharp-stream.com/rspb.mp3",
+        audioSrc: "http://10.44.2.150:8888/out.mp3",
       });
       isInit.current = true;
     }
