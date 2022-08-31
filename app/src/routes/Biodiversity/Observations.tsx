@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 import "./index.css";
 
 const nelat = "41.452398072632";
@@ -42,7 +43,17 @@ const taxaOptions = [
 ];
 
 export default function Observations() {
-  const [taxa, setTaxa] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  function getCurrentTaxa() {
+    return (
+      taxaOptions.find(
+        (tax: any) => tax.label.toLowerCase() === searchParams.get("taxa")
+      )?.value || ""
+    );
+  }
+
+  const [taxa, setTaxa] = useState(getCurrentTaxa());
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
 
@@ -83,9 +94,11 @@ export default function Observations() {
   }
 
   useEffect(() => {
-    console.log("fetching");
     setPage(1);
     fetchData();
+    setSearchParams({
+      taxa: taxaOptions.find((tax) => tax.value === taxa)?.label.toLowerCase(),
+    });
   }, [taxa]);
 
   useEffect(() => {
@@ -111,7 +124,7 @@ export default function Observations() {
         </div>
 
         <select
-          defaultValue="select"
+          value={taxa}
           className="select"
           onChange={(e) => setTaxa(e.target.value)}
         >
