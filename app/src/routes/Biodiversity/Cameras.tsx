@@ -10,7 +10,6 @@ export default function Cameras() {
 
   function loadHls(el: any) {
     const hls = new Hls();
-
     hls.attachMedia(el);
     hls.on(Hls.Events.MEDIA_ATTACHED, () => {
       hls.loadSource(videoSrc);

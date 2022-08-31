@@ -23,6 +23,33 @@
 <path fill="var(--background)" stroke="currentColor" stroke-width="0.2" id="Vector_57" d="M140.334 169.311L140.334 169.311C135.871 170.058 131.678 173.82 128.611 177.375C127.074 179.155 125.815 180.888 124.941 182.176C124.503 182.82 124.162 183.353 123.929 183.725C123.813 183.911 123.724 184.057 123.665 184.157C123.635 184.206 123.612 184.245 123.597 184.27L123.595 184.273C121.937 184.667 120.685 184.543 119.739 184.143C118.785 183.739 118.131 183.051 117.683 182.308C117.235 181.565 116.993 180.769 116.865 180.157C116.8 179.852 116.764 179.593 116.744 179.411C116.734 179.32 116.728 179.248 116.724 179.2C116.723 179.18 116.722 179.164 116.721 179.152L116.722 179.151C116.73 179.135 116.743 179.111 116.759 179.079C116.793 179.016 116.842 178.923 116.908 178.803C117.041 178.563 117.237 178.216 117.494 177.789C118.009 176.935 118.767 175.761 119.738 174.484C121.683 171.928 124.479 168.965 127.894 167.31C131.319 165.649 134.711 164.694 137.247 164.154C138.515 163.884 139.568 163.718 140.304 163.619C140.673 163.57 140.961 163.537 141.158 163.517C141.256 163.507 141.331 163.5 141.382 163.496L141.439 163.491L141.453 163.49L141.456 163.49L141.457 163.49L141.457 163.49L141.45 163.39C141.458 163.49 141.458 163.49 141.458 163.49L141.458 163.49L141.459 163.49L141.463 163.489L141.479 163.488L141.543 163.483C141.598 163.478 141.679 163.47 141.784 163.46C141.993 163.438 142.295 163.405 142.666 163.354C143.408 163.253 144.429 163.086 145.543 162.82C147.706 162.303 150.242 161.411 151.761 159.894C152.168 161.338 152.527 162.43 153.264 164.483C153.24 164.506 153.205 164.538 153.16 164.578C153.057 164.668 152.898 164.799 152.676 164.963C152.231 165.29 151.535 165.745 150.529 166.252C148.518 167.266 145.27 168.488 140.334 169.311Z"/>
 <path  fill="var(--background)" stroke="currentColor" stroke-width="0.2" id="Vector_58" d="M103.36 146.79C103.36 146.79 104.24 150.31 103.97 154.92C103.97 154.92 103.36 157.44 101.77 157.85C99.04 158.58 99.46 158.64 97.13 158.54C94.79 158.43 93.93 156.25 93.93 156.25C94.6 153.9 94.6 150.46 94.6 150.46C94.39 142.42 92.47 137.55 92.47 137.55C91.55 134.56 90.24 132.55 88.3 130.4C84.15 125.81 83.12 124.35 82 120.89C82.55 120.89 85.29 120.47 87.05 120C88.4 122.86 90.78 125.95 93.48 127.87C95.99 129.65 98.22 131.77 100.06 134.37C101.09 135.74 103 140.33 103.36 146.79Z" fill="white"/>
 </g>
+<g id="Platform3">
+<path id="Vector_26" d="M311.33 151.89L328.27 157.89" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_27" d="M328.271 157.89V158.54" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_28" d="M328.271 158.54L269.271 183.27" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_29" d="M328.271 157.89L269.271 182.61" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_30" d="M269.271 182.61V183.27" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_31" d="M269.27 183.27L252.33 177.26" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_32" d="M269.27 182.61L252.33 176.61" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_33" d="M252.33 176.61V177.26" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_34" d="M252.33 176.61L311.33 151.89" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Platform2">
+<path id="Vector_35" d="M363.89 140.67L266.88 106.29" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_36" d="M379.47 134.14L363.89 140.67" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_37" d="M363.89 141.32L266.88 106.95" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_38" d="M379.47 134.79L363.89 141.32" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_39" d="M363.89 140.67V141.32" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_40" d="M379.47 134.14V134.79" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_41" d="M282.46 99.76L379.47 134.14" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_42" d="M266.88 106.29L282.46 99.76" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_43" d="M266.88 106.29V106.95" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Platform1">
+<path id="Vector_6" d="M296.561 66.0201V65.3601" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_7" d="M296.56 66.02L70.0703 160.93" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_8" d="M279.62 59.3601L53.2002 154.24L69.3402 160.58L296.56 65.3601L279.62 59.3601Z" fill="var(--background)" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
 <g id="Circulation">
 <g id="Group">
 <g id="Group_2">
@@ -81,33 +108,6 @@
 </g>
 </g>
 <path id="Vector_25" d="M260.24 192.12V204.82" stroke="currentColor" stroke-width="0.25" stroke-miterlimit="10" stroke-dasharray="3 3"/>
-</g>
-<g id="Platform3">
-<path id="Vector_26" d="M311.33 151.89L328.27 157.89" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_27" d="M328.271 157.89V158.54" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_28" d="M328.271 158.54L269.271 183.27" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_29" d="M328.271 157.89L269.271 182.61" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_30" d="M269.271 182.61V183.27" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_31" d="M269.27 183.27L252.33 177.26" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_32" d="M269.27 182.61L252.33 176.61" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_33" d="M252.33 176.61V177.26" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_34" d="M252.33 176.61L311.33 151.89" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<g id="Platform2">
-<path id="Vector_35" d="M363.89 140.67L266.88 106.29" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_36" d="M379.47 134.14L363.89 140.67" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_37" d="M363.89 141.32L266.88 106.95" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_38" d="M379.47 134.79L363.89 141.32" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_39" d="M363.89 140.67V141.32" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_40" d="M379.47 134.14V134.79" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_41" d="M282.46 99.76L379.47 134.14" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_42" d="M266.88 106.29L282.46 99.76" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_43" d="M266.88 106.29V106.95" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<g id="Platform1">
-<path id="Vector_6" d="M296.561 66.0201V65.3601" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_7" d="M296.56 66.02L70.0703 160.93" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_8" d="M279.62 59.3601L53.2002 154.24L69.3402 160.58L296.56 65.3601L279.62 59.3601Z" fill="var(--background)" stroke="currentColor" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <g id="Genus_Ulmus">
 <g id="XMLID_4_" opacity="0.2">

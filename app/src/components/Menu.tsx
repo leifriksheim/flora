@@ -5,7 +5,7 @@ export default function Menu() {
     <ul className="page-menu">
       <li>
         <div className="page-menu-item">
-          <Link to="/cameras">About</Link>
+          <Link to="/project">About</Link>
           <p>Read more about the project</p>
         </div>
       </li>

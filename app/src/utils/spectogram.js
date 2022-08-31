@@ -1,6 +1,7 @@
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import colormap from "https://cdn.skypack.dev/colormap";
+import colormap from "colormap";
+import fragmentShader from "./fragmentShader.gsl?raw";
+import vertexShader from "./vertexShader.gsl?raw";
 
 export default class Spectrogram {
   el = null;
@@ -55,16 +56,6 @@ export default class Spectrogram {
     this.analyser.fftSize = 4 * this.frequencySamples;
     this.analyser.smoothingTimeConstant = 0.5;
     this.analyserData = new Uint8Array(this.analyser.frequencyBinCount);
-
-    /*
-    navigator.mediaDevices
-      .getUserMedia({ audio: { echoCancellation: false }, video: false })
-      .then((stream) => {
-        this.stream = stream;
-        this.source = this.audioContext.createMediaStreamSource(stream);
-        this.source.connect(this.analyser);
-      });
-      */
 
     this.audioEl = document.createElement("audio");
     this.audioEl.src = this.audioSrc;
@@ -191,16 +182,14 @@ export default class Spectrogram {
       new THREE.Uint8BufferAttribute(this.heights, 1)
     );
 
-    var vShader = document.getElementById("vertexshader");
-    var fShader = document.getElementById("fragmentshader");
     var uniforms = {
       vLut: { type: "v3v", value: lut },
     };
 
     let material = new THREE.ShaderMaterial({
       uniforms: uniforms,
-      vertexShader: vShader.text,
-      fragmentShader: fShader.text,
+      vertexShader: vertexShader,
+      fragmentShader: fragmentShader,
       blending: THREE.NormalBlending,
       transparent: true,
     });
@@ -215,7 +204,7 @@ export default class Spectrogram {
 
     this.renderer = new THREE.WebGLRenderer({
       antialias: true,
-      alpha: true,
+      alpha: false,
     });
 
     this.renderer.setPixelRatio(window.devicePixelRatio);

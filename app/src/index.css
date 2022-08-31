@@ -1,6 +1,7 @@
 :root {
   --gutter: 28px;
   --green: #007938;
+  --green-light: #009746;
   --background: #fff;
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
   --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
@@ -67,9 +68,14 @@ a:hover {
   text-align: center;
 }
 
+.button:hover {
+  background: var(--green-light);
+}
+
 .button[disabled] {
   opacity: 0.5;
   cursor: default;
+  background: var(--green);
 }
 
 .container {
@@ -125,6 +131,13 @@ a:hover {
 
 .main-heading {
   font-size: var(--font-size-xxl);
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+}
+
+.h2 {
+  font-size: var(--font-size-xl);
   text-transform: uppercase;
   font-weight: 400;
   text-align: center;

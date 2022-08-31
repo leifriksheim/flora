@@ -2,6 +2,13 @@ svg * {
   transition: all 1s ease;
 }
 
+.person-grid {
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 50px;
+}
+
 .step-container {
   text-align: center;
   margin-top: 80px;
