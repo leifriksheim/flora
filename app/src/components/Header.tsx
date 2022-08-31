@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { Outlet, NavLink } from "react-router-dom";
 import { useState } from "react";
 import classNames from "classnames";
+import Menu from "./Menu";
 
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
@@ -38,25 +39,20 @@ export default function Header() {
         open: isOpen,
       })}
     >
-      <div className="header__logo">
-        <NavLink to="/">F.L.O.R.A</NavLink>
+      <div className="header__menu-bar">
+        <div className="header__logo">
+          <NavLink to="/">F.L.O.R.A</NavLink>
+        </div>
+        <button onClick={() => setOpen(!isOpen)}>
+          {isOpen ? <span>&#10005;</span> : <span>&#9776;</span>}
+        </button>
       </div>
-      <div className="header__menu">
-        <NavLink className={activeClassName} to="/project">
-          About
-        </NavLink>
-        <NavLink className={activeClassName} to="/observations">
-          Observations
-        </NavLink>
-        <NavLink className={activeClassName} to="/cameras">
-          Camera
-        </NavLink>
-        <NavLink className={activeClassName} to="/radio">
-          Bird radio
-        </NavLink>
-        <NavLink className={activeClassName} to="/traceability">
-          Traceability
-        </NavLink>
+      <div className="header__container">
+        {isOpen && (
+          <div className="container">
+            <Menu onClick={() => setOpen(false)}></Menu>
+          </div>
+        )}
       </div>
     </header>
   );

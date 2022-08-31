@@ -6,7 +6,7 @@ import { useLayoutEffect, useEffect, useRef, useState } from "react";
 
 export default function Cameras() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoSrc = "http://a8150a7d4066.sn.mynetname.net:8080/hls/live.m3u8";
+  const videoSrc = "http://10.44.2.150:8080/hls/live.m3u8";
 
   function loadHls(el: any) {
     const hls = new Hls();
