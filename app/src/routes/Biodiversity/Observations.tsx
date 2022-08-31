@@ -48,7 +48,7 @@ export default function Observations() {
   function getCurrentTaxa() {
     return (
       taxaOptions.find(
-        (tax: any) => tax.label.toLowerCase() === searchParams.get("taxa")
+        (tax: any) => tax.label.toLowerCase() === searchParams.get("query")
       )?.value || ""
     );
   }
@@ -97,7 +97,7 @@ export default function Observations() {
     setPage(1);
     fetchData();
     setSearchParams({
-      taxa:
+      query:
         taxaOptions.find((tax) => tax.value === taxa)?.label.toLowerCase() ||
         "",
     });

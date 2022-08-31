@@ -84,12 +84,14 @@ export default function Project() {
             estimated population of 1,000 species of plants and 10,000 million
             trees
           </p>
+          {/*
           <h2 className="h2">Who made it</h2>
           <div className="person-grid">
             {students.map((student: any) => {
               return <div key={student.name}>{student.name}</div>;
             })}
           </div>
+          */}
         </div>
       </div>
     </main>
