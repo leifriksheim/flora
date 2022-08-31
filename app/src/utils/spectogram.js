@@ -204,7 +204,7 @@ export default class Spectrogram {
 
     this.renderer = new THREE.WebGLRenderer({
       antialias: true,
-      alpha: false,
+      alpha: true,
     });
 
     this.renderer.setPixelRatio(window.devicePixelRatio);
