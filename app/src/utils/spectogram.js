@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import colormap from "colormap";
-import fragmentShader from "./fragmentShader.gsl?raw";
-import vertexShader from "./vertexShader.gsl?raw";
+import fragmentShader from "./fragmentshader.gsl?raw";
+import vertexShader from "./vertexshader.gsl?raw";
 
 export default class Spectrogram {
   el = null;
