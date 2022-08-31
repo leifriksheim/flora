@@ -13,7 +13,6 @@ export default function Cameras() {
 
   useEffect(() => {
     if (audioRef.current && !isInit.current) {
-      console.log("run");
       // @ts-ignore
       spectogram.current = new Spectogram({
         el: audioRef.current,

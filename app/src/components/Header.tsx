@@ -23,7 +23,7 @@ export default function Header() {
     if (timer.current) {
       clearTimeout(timer.current);
     }
-    timer.current = setTimeout(startInteractionTimer, 2000);
+    timer.current = setTimeout(startInteractionTimer, 5000);
   }
 
   function activeClassName({ isActive }: { isActive: boolean }) {
@@ -44,6 +44,9 @@ export default function Header() {
       <div className="header__menu">
         <NavLink className={activeClassName} to="/project">
           About
+        </NavLink>
+        <NavLink className={activeClassName} to="/observations">
+          Observations
         </NavLink>
         <NavLink className={activeClassName} to="/cameras">
           Camera

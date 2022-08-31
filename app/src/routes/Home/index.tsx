@@ -75,7 +75,6 @@ export default function Home() {
             <span>and </span>
             <span>analysis</span>
           </h1>
-          <h2>26 C° / 101325 Pa / 60φ</h2>
         </div>
         <div
           style={{ display: "none" }}
