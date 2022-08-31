@@ -97,7 +97,9 @@ export default function Observations() {
     setPage(1);
     fetchData();
     setSearchParams({
-      taxa: taxaOptions.find((tax) => tax.value === taxa)?.label.toLowerCase(),
+      taxa:
+        taxaOptions.find((tax) => tax.value === taxa)?.label.toLowerCase() ||
+        "",
     });
   }, [taxa]);
 
