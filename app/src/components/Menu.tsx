@@ -4,44 +4,34 @@ export default function Menu({ onClick = () => {} } = {}) {
   return (
     <ul className="page-menu">
       <li>
-        <div className="page-menu-item">
-          <Link onClick={onClick} to="/project">
-            About
-          </Link>
+        <Link className="page-menu-item" onClick={onClick} to="/project">
+          <h2>About</h2>
           <p>Read more about the project</p>
-        </div>
+        </Link>
       </li>
       <li>
-        <div className="page-menu-item">
-          <Link onClick={onClick} to="/cameras">
-            Live Camera
-          </Link>
+        <Link className="page-menu-item" onClick={onClick} to="/cameras">
+          <h2>Live Camera</h2>
           <p>Watch our live video feed</p>
-        </div>
+        </Link>
       </li>
       <li>
-        <div className="page-menu-item">
-          <Link onClick={onClick} to="/radio">
-            Bird Radio
-          </Link>
+        <Link className="page-menu-item" onClick={onClick} to="/radio">
+          <h2>Bird Radio</h2>
           <p>Listen to our live audio feed</p>
-        </div>
+        </Link>
       </li>
       <li>
-        <div className="page-menu-item">
-          <Link onClick={onClick} to="/observations">
-            Observations
-          </Link>
+        <Link className="page-menu-item" onClick={onClick} to="/observations">
+          <h2>Observations</h2>
           <p>See all observations of biodiversity</p>
-        </div>
+        </Link>
       </li>
       <li>
-        <div className="page-menu-item">
-          <Link onClick={onClick} to="/traceability">
-            Traceability
-          </Link>
+        <Link className="page-menu-item" onClick={onClick} to="/traceability">
+          <h2> Traceability</h2>
           <p>See where we cut the trees</p>
-        </div>
+        </Link>
       </li>
     </ul>
   );

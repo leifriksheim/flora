@@ -1,15 +1,10 @@
 .header {
   width: 100%;
   padding: var(--gutter);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: relative;
   z-index: 999;
   opacity: 0;
   font-size: var(--font-size-md);
-  transform: translateY(-10px);
-  transition: 0.5s ease all;
   text-transform: uppercase;
 }
 
@@ -33,7 +28,6 @@
 
 .header.show {
   opacity: 1;
-  transform: translateY(0px);
 }
 
 @media (max-width: 800px) {
@@ -65,15 +59,21 @@
   text-decoration: underline;
 }
 
-.header.open .header__container {
+.header.open {
   position: fixed;
-  width: 100vw;
-  height: 5000px;
+  background: var(--background);
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.header.open .header__container {
+  padding-top: 50px;
+  max-width: 100%;
+  width: 100%;
   left: 0;
   top: 100px;
   opacity: 0;
   animation: menu-fade 0.5s ease forwards;
-  background: var(--background);
 }
 
 @keyframes menu-fade {

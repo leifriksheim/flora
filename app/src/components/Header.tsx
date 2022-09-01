@@ -24,7 +24,7 @@ export default function Header() {
     if (timer.current) {
       clearTimeout(timer.current);
     }
-    timer.current = setTimeout(startInteractionTimer, 5000);
+    timer.current = setTimeout(startInteractionTimer, 15000);
   }
 
   function activeClassName({ isActive }: { isActive: boolean }) {
@@ -48,11 +48,7 @@ export default function Header() {
         </button>
       </div>
       <div className="header__container">
-        {isOpen && (
-          <div className="container">
-            <Menu onClick={() => setOpen(false)}></Menu>
-          </div>
-        )}
+        {isOpen && <Menu onClick={() => setOpen(false)}></Menu>}
       </div>
     </header>
   );

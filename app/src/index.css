@@ -89,33 +89,36 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr;
   gap: 50px;
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-xl);
   list-style: inside decimal-leading-zero;
+}
+
+@media (min-width: 800px) {
+  .page-menu {
+    font-size: var(--font-size-xxl);
+  }
 }
 
 .page-menu-item {
   display: block;
   vertical-align: text-top;
   position: absolute;
-  left: 100px;
+  text-decoration: none;
+  left: 70px;
   top: 0;
 }
 
-@media (min-width: 800px) {
-  .page-menu-item {
-    left: 150px;
-  }
-}
-
 .page-menu li {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   position: relative;
 }
 
-.page-menu a {
+.page-menu h2 {
+  margin: 0;
+  font-weight: 400;
   color: currentColor;
   text-decoration: none;
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-xl);
 }
 
 .page-menu a:hover {
@@ -126,7 +129,19 @@ a:hover {
   margin-top: 0;
   color: currentColor;
   text-decoration: none;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
+}
+
+@media (min-width: 800px) {
+  .page-menu-item {
+    left: 150px;
+  }
+  .page-menu-item h2 {
+    font-size: var(--font-size-xxl);
+  }
+  .page-menu-item p {
+    font-size: var(--font-size-lg);
+  }
 }
 
 .main-heading {
